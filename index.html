@@ -27,8 +27,8 @@
     <link rel="preload" as="image" href="assets/poked.png" />
     <link rel="preload" as="image" href="assets/stairs.svg" />
     <link rel="preload" as="image" href="assets/unpoked.png" />
-    <link rel="preload" as="audio" href="assets/sounds/hey.wav" />
-    <link rel="preload" as="audio" href="assets/sounds/woo.wav" />
+    <link rel="preload" as="fetch" href="assets/sounds/hey.wav" />
+    <link rel="preload" as="fetch" href="assets/sounds/woo.wav" />
   </head>
   <body>
     <img src="assets/header.gif" width="800" height="60" />
@@ -205,7 +205,7 @@
       jesse.src = "assets/unpoked.png";
       jessesShown++;
       if (jessesShown < totalJesses) {
-        jesse.animate(
+        const anim = jesse.animate(
           {
             transform: [
               "scale(var(--scale)) translateY(100%)",
@@ -214,14 +214,14 @@
               "scale(var(--scale)) translateY(100%)",
             ],
             clipPath: [
-              "rect(0px 0px 0px 650px)",
-              "rect(0px 0px 822px 650px)",
-              "rect(0px 0px 822px 650px)",
-              "rect(0px 0px 0px 650px)",
+              "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
+              "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
             ],
             offset: [0, 0.3, 0.7, 1],
           },
-          600
+          { duration: 600 }
         );
       } else {
         score.classList.add("invisible");
