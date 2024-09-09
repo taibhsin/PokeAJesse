@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Jester";
-  src: url("/assets/fonts/JesterRegular.woff2") format("woff2");
+  src: url("assets/fonts/JesterRegular.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Lithos";
-  src: url("/assets/fonts/Lithos.woff2") format("woff2");
+  src: url("assets/fonts/Lithos.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
