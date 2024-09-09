@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Poke_a_Jesse</title>
+    <link
+      rel="preload"
+      as="font"
+      href="/assets/fonts/JesterRegular.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/assets/fonts/Lithos.woff2"
+      crossorigin
+    />
+    <link rel="preload" as="image" href="/assets/bg.svg" />
+    <link rel="preload" as="image" href="/assets/boxes.svg" />
+    <link rel="preload" as="image" href="/assets/crates.svg" />
+    <link rel="preload" as="image" href="/assets/header.gif" />
+    <link rel="preload" as="image" href="/assets/light.svg" />
+    <link rel="preload" as="image" href="/assets/play_again.svg" />
+    <link rel="preload" as="image" href="/assets/poked.png" />
+    <link rel="preload" as="image" href="/assets/stairs.png" />
+    <link rel="preload" as="image" href="/assets/unpoked.png" />
+    <link rel="preload" as="audio" href="/assets/sounds/hey.wav" />
+    <link rel="preload" as="audio" href="/assets/sounds/woo.wav" />
+  </head>
+  <body>
+    <img src="/assets/header.gif" width="800" height="60" />
+    <p>
+      <select>
+        <option selected="">Wall of Jesse Quick Menu</option>
+        <option value="index.html">Wall of Jesse - HOME</option>
+        <option value="JesseBio.html">Jesse's Biography</option>
+        <option value="photoalbum.html">The Photo Album</option>
+        <option value="photoalbum2.html">The Photo Album - Page 2</option>
+        <option value="photoalbum3.html">The Photo Album - Page 3</option>
+        <option value="sounds.html">The Soothing Sounds of Jesse</option>
+        <option value="episode.html">Jesse's Episode Guide</option>
+        <option value="video.html">Jesse's Video Guide</option>
+        <option value="drawJesse.html">Draw Jesse!</option>
+        <option value="comicJesse.html">Comic Book Jesse</option>
+        <option value="drawfans.html">
+          The Draw Jesse! Fan Submission Gallery
+        </option>
+        <option value="meditation.html">The Jesse Meditation Tapes</option>
+        <option value="GBJesse.html">God Bless Jesse Clarke</option>
+        <option value="Jessefiles.html">The Jesse Files</option>
+        <option value="links.html">Places of Great Interest</option>
+        <option value="Poke_a_Jesse.html">Poke-A-Jesse Game</option>
+        <option value="Hair_Jesse.html">Jesse's BAD HAIR DAY Game</option>
+      </select>
+    </p>
+    <div id="intro">
+      <img
+        id="wall"
+        src="/assets/wall_of_jesse.gif"
+        width="443px"
+        height="94px"
+      />
+      <div id="divorced">www.divorced.lol</div>
+      <div id="presents">presents</div>
+      <div id="title">Poke-a-Jesse!</div>
+      <div id="prompt">
+        <div id="prompt-a">Click Jesse</div>
+        <div id="prompt-b">to Play!</div>
+      </div>
+      <img id="jess" src="/assets/unpoked.png" />
+    </div>
+    <div id="wrapper" class="wrapper invisible">
+      <img src="/assets/bg.svg" class="bg" />
+      <img
+        id="jesse-3"
+        src="/assets/unpoked.png"
+        class="jesse jesse-3 hidden"
+        width="650px"
+        height="822px"
+        draggable="false"
+      />
+      <img src="/assets/stairs.svg" class="stairs" />
+      <img
+        id="jesse-4"
+        src="/assets/unpoked.png"
+        class="jesse jesse-4 hidden"
+        width="650px"
+        height="822px"
+        draggable="false"
+      />
+      <img
+        id="jesse-1"
+        src="/assets/unpoked.png"
+        class="jesse jesse-1 hidden"
+        width="650px"
+        height="822px"
+        draggable="false"
+      />
+      <img
+        id="jesse-5"
+        src="/assets/unpoked.png"
+        class="jesse jesse-5 hidden"
+        width="650px"
+        height="822px"
+        draggable="false"
+      />
+      <img src="/assets/boxes.svg" class="boxes" />
+      <img
+        id="jesse-2"
+        src="/assets/unpoked.png"
+        class="jesse jesse-2 hidden"
+        width="650px"
+        height="822px"
+        draggable="false"
+      />
+      <img src="/assets/crates.svg" class="crates" />
+      <img src="/assets/light.svg" class="light" />
+      <span id="score" class="score">000</span>
+      <div id="complete" class="invisible">
+        <div class="shadow">You eye-poked Jesse</div>
+        <div id="finalscore">000</div>
+        <div class="shadow">times out of</div>
+        <div class="shadow">100!</div>
+        <img id="again" src="/assets/play_again.svg" />
+        <div id="url">www.divorced.lol</div>
+        <img id="smallwall" src="/assets/wall_of_jesse.gif" />
+        <div id="copyright">©2024 Wall of Jesse</div>
+      </div>
+    </div>
+    <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+    <table cellpadding="4" cellspacing="0" width="800" height="1">
+      <tbody>
+        <tr>
+          <td width="804">
+            <p style="line-height: 100%; margin-top: 0; margin-bottom: 0"></p>
+            <hr size="5" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">
+      <a href="http://www.divorced.lol">Back to Wall of Jesse!</a>
+    </p>
+    <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+  </body>
+  <script>
+    again.addEventListener("click", () => {
+      location.reload();
+    });
+    const woo = new Audio("/assets/sounds/woo.wav");
+    const hey = new Audio("/assets/sounds/hey.wav");
+    jess.addEventListener("click", (e) => {
+      jess.src = "/assets/poked.png";
+
+      woo.play();
+      setTimeout(() => {
+        intro.classList.add("invisible");
+        wrapper.classList.remove("invisible");
+        setInterval(() => {
+          showJesse();
+        }, 800);
+      }, 400);
+    });
+    const totalJesses = 100;
+    let jessesShown = 0;
+    let curScore = 0;
+    let jesseId = Math.round(Math.random() * 4);
+
+    function poke(e) {
+      if (e.target.src.endsWith("unpoked.png")) {
+        hey.play();
+        curScore++;
+
+        e.target.classList.remove("hidden");
+        e.target.getAnimations()[0]?.cancel();
+
+        e.target.src = "/assets/poked.png";
+        setTimeout(() => {
+          e.target.classList.add("hidden");
+        }, 100);
+
+        score.textContent = curScore.toString(10).padStart(3, "0");
+        finalscore.textContent = curScore.toString(10).padStart(3, "0");
+      }
+    }
+
+    function unpoke(e) {
+      e.target.classList.remove("hidden");
+    }
+
+    for (let i = 1; i <= 5; i++) {
+      document.getElementById(`jesse-${i}`).addEventListener("click", poke);
+    }
+
+    function showJesse() {
+      let newId = Math.round(Math.random() * 4);
+      if (newId === jesseId) {
+        newId = (newId + 1) % 5;
+      }
+      jesseId = newId;
+      const jesse = document.getElementById(`jesse-${jesseId + 1}`);
+      jesse.src = "/assets/unpoked.png";
+      jessesShown++;
+      if (jessesShown < totalJesses) {
+        jesse.animate(
+          {
+            transform: [
+              "scale(var(--scale)) translateY(100%)",
+              "scale(var(--scale)) translateY(0%)",
+              "scale(var(--scale)) translateY(0%)",
+              "scale(var(--scale)) translateY(100%)",
+            ],
+            clipPath: [
+              "rect(0px 0px 0px 650px)",
+              "rect(0px 0px 822px 650px)",
+              "rect(0px 0px 822px 650px)",
+              "rect(0px 0px 0px 650px)",
+            ],
+            offset: [0, 0.3, 0.7, 1],
+          },
+          600
+        );
+      } else {
+        score.classList.add("invisible");
+        complete.classList.remove("invisible");
+      }
+    }
+  </script>
+</html>
