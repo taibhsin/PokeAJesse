@@ -8,27 +8,27 @@
     <title>Poke_a_Jesse</title>
     <link
       rel="preload"
-      as="font"
       href="assets/fonts/JesterRegular.woff2"
+      as="font"
       crossorigin
     />
     <link
       rel="preload"
-      as="font"
       href="assets/fonts/Lithos.woff2"
+      as="font"
       crossorigin
     />
-    <link rel="preload" as="image" href="assets/bg.svg" />
-    <link rel="preload" as="image" href="assets/boxes.svg" />
-    <link rel="preload" as="image" href="assets/crates.svg" />
-    <link rel="preload" as="image" href="assets/header.gif" />
-    <link rel="preload" as="image" href="assets/light.svg" />
-    <link rel="preload" as="image" href="assets/play_again.svg" />
-    <link rel="preload" as="image" href="assets/poked.png" />
-    <link rel="preload" as="image" href="assets/stairs.svg" />
-    <link rel="preload" as="image" href="assets/unpoked.png" />
-    <link rel="preload" as="fetch" href="assets/sounds/hey.wav" />
-    <link rel="preload" as="fetch" href="assets/sounds/woo.wav" />
+    <link rel="preload" href="assets/bg.svg" as="image" />
+    <link rel="preload" href="assets/boxes.svg" as="image" />
+    <link rel="preload" href="assets/crates.svg" as="image" />
+    <link rel="preload" href="assets/header.gif" as="image" />
+    <link rel="preload" href="assets/light.svg" as="image" />
+    <link rel="preload" href="assets/play_again.svg" as="image" />
+    <link rel="preload" href="assets/poked.png" as="image" />
+    <link rel="preload" href="assets/stairs.svg" as="image" />
+    <link rel="preload" href="assets/unpoked.png" as="image" />
+    <link rel="preload" href="assets/sounds/hey.wav" as="audio" />
+    <link rel="preload" href="assets/sounds/woo.wav" as="audio" />
   </head>
   <body>
     <img src="assets/header.gif" width="800" height="60" />
@@ -57,6 +57,7 @@
       </select>
     </p>
     <div id="intro">
+      <div id="secret"></div>
       <img
         id="wall"
         src="assets/wall_of_jesse.gif"
@@ -70,7 +71,7 @@
         <div id="prompt-a">Click Jesse</div>
         <div id="prompt-b">to Play!</div>
       </div>
-      <img id="jess" src="assets/unpoked.png" />
+      <div id="jess"></div>
     </div>
     <div id="wrapper" class="wrapper invisible">
       <img src="assets/bg.svg" class="bg" />
@@ -147,15 +148,16 @@
     <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
   </body>
   <script>
+    const woo = new Audio("assets/sounds/woo.wav");
+    const hey = new Audio("assets/sounds/hey.wav");
+
     again.addEventListener("click", () => {
       location.reload();
     });
-    const woo = new Audio("assets/sounds/woo.wav");
-    const hey = new Audio("assets/sounds/hey.wav");
-    jess.addEventListener("click", (e) => {
-      jess.src = "assets/poked.png";
 
+    jess.addEventListener("click", (e) => {
       woo.play();
+      jess.style.background = "url('assets/poked.png')";
       setTimeout(() => {
         intro.classList.add("invisible");
         wrapper.classList.remove("invisible");
@@ -192,7 +194,7 @@
     }
 
     for (let i = 1; i <= 5; i++) {
-      document.getElementById(`jesse-${i}`).addEventListener("click", poke);
+      document.getElementById(`jesse-${i}`).addEventListener("mousedown", poke);
     }
 
     function showJesse() {

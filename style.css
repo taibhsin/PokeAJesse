@@ -225,15 +225,32 @@ body {
 }
 
 #jess {
+  position: absolute;
   transform: scale(0.2);
   animation: slideup 400ms;
   animation-fill-mode: forwards;
   animation-delay: 1550ms;
   cursor: pointer;
+  width: 650px;
+  height: 822px;
+  background: url('assets/unpoked.png');
+  background-repeat: no-repeat;
+  translate: 0px 25px;
 }
 
 #jess:hover {
   transform: scale(0.23);
+}
+
+#jess:active {
+    background: url('assets/poked.png');
+}
+
+#secret {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    background: url('assets/poked.png');
 }
 
 #prompt-a {
@@ -256,11 +273,11 @@ body {
 
 @keyframes slideup {
   from {
-    translate: 0px -240px;
+    translate: 0px 25px;
   }
 
   to {
-    translate: 0px -388px;
+    translate: 0px -140px;
   }
 }
 
